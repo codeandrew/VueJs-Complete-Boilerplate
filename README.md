@@ -6,7 +6,7 @@
 - Vue Router
 - Sass
 - BootstrapVue
-
+- Vuex
 
 
 
