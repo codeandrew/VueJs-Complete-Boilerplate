@@ -1,0 +1,18 @@
+  .nav-header{
+    height : 57px;
+    line-height : 57px;
+    .navbrand {
+      float : left;
+      margin-top : 8px;
+    }
+  }
+
+ .navbar-nav {
+   float: right;
+   display: inline-block;
+
+   .nav-link {
+     display: inline-block;
+     margin-right: 10px;
+   }
+ }
