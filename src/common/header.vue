@@ -1,18 +1,35 @@
 <template lang="html">
-  <div class="">
-    <h1>header</h1>
-    <div class="pull-right">
-      <b-nav>
-        <b-nav-item to="/" active>Active</b-nav-item>
-        <b-nav-item to="/about">Link</b-nav-item>
-        <b-nav-item to="example">Another Link</b-nav-item>
-      </b-nav>
-    </div>
+  <div class="nav-header">
+    <b-container>
+      <div class="navbrand">
+        <h1>header</h1>
+      </div>
+
+      <div>
+        <ul class="navbar-nav">
+          <router-link v-for="item in menu"
+          tag='li' key='item.name' class="nav-link"
+          :to="item.to">
+            <a > {{ item.name }}</a>
+          </router-link>
+        </ul>
+      </div>
+    </b-container>
+
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return {
+      menu : [
+        { name : 'home', to : '/'},
+        { name : 'about', to : '/about'},
+        { name : 'example', to : '/example'}
+      ]
+    }
+  }
 }
 </script>
 
