@@ -16,10 +16,13 @@ Vue.config.productionTip = false
 // Components
 import header from './common/header'
 import footer from './common/footer'
+import infoCol from './components/info-col'
+import infoSection from './components/info-section'
 
 Vue.component('head-component', header )
 Vue.component('foot-component', footer )
-
+Vue.component('info-col', infoCol )
+Vue.component('infoSection', infoSection )
 
 
 //==================
@@ -29,5 +32,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components:  { App }
 })
