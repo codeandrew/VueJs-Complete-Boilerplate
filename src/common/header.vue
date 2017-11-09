@@ -2,7 +2,7 @@
   <div class="nav-header">
     <b-container>
       <div class="navbrand">
-        <h1>header</h1>
+        <h2>NavBrand </h2>
       </div>
 
       <div>
