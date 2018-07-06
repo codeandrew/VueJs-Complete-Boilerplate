@@ -7,9 +7,9 @@
 
       <div>
         <ul class="navbar-nav">
-          <router-link v-for="item in menu"
+          <router-link v-for="item in routes"
           tag='li' key='item.name' class="nav-link"
-          :to="item.to">
+          :to="item.path">
             <a > {{ item.name }}</a>
           </router-link>
         </ul>
@@ -20,15 +20,21 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data(){
-    return {
-      menu : [
-        { name : 'home', to : '/'},
-        { name : 'about', to : '/about'},
-        { name : 'example', to : '/example'}
-      ]
-    }
+    return { }
+  },
+
+  computed : {
+    ...mapState([
+      'routes'
+    ])
+  },
+
+  mounted(){
+    console.log(this.routes)
   }
 }
 </script>
