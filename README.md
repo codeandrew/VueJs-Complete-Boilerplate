@@ -7,6 +7,8 @@
 - Sass
 - BootstrapVue
 - Vuex
+- Axios
+- FireBase
 
 
 
