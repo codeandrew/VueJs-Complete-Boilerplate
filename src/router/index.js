@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '../pages/home'
 import About from '../pages/about'
 import Example from '../pages/example'
+import Login from '../components/login'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/example',
       name : 'example',
       component : Example
+    },
+    {
+      path: '/login',
+      name : 'login',
+      component : Login
     }
   ]
 })
