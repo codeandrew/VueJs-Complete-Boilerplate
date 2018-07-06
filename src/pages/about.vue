@@ -16,16 +16,22 @@ import { mapState } from 'vuex'
 
 export default {
   data() {
-    about : [
-      'This is a boiler Template of VueJs to reduce time in setting up and more on actual coding',
-      'together with: '
-    ]
+    return {
+      about : [
+        'This is a boiler Template of VueJs to reduce time in setting up and more on actual coding',
+        'together with: '
+      ]
+    }
   },
 
   computed : {
     ...mapState([
       'dependencies'
     ])
+  },
+
+  mounted(){
+    console.log( this.dependencies )
   }
 }
 </script>
