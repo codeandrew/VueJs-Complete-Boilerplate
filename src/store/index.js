@@ -5,11 +5,20 @@ import axios from 'axios'
 
 Vue.use(Vuex);
 
-let baseData = { }
+let baseData = {
+  dependencies : [
+    'BootstrapVue',
+    'VueRouter',
+    'Vuex',
+    'Sass/Scss',
+    'Axios',
+    'Firebase'
+  ]
+ }
 
 export const store = new Vuex.Store({
     state : {
-
+      dependencies : { ...baseData.dependencies } 
     },
     //This is where you define the data structure of your application.
     //You can also set default or initial state here.
