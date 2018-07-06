@@ -7,6 +7,7 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import Vuex from 'vuex'
+import { store } from './store'
 
 Vue.use(Vuex)
 Vue.use(BootstrapVue)
@@ -30,6 +31,7 @@ Vue.component('infoSection', infoSection )
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store : store,
   router,
   template: '<App/>',
   components:  { App }
