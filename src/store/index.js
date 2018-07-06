@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-
+import router from '../router'
 
 Vue.use(Vuex);
 
@@ -18,7 +18,8 @@ let baseData = {
 
 export const store = new Vuex.Store({
     state : {
-      dependencies : { ...baseData.dependencies } 
+      dependencies : { ...baseData.dependencies } ,
+      routes : { ...router.options.routes }
     },
     //This is where you define the data structure of your application.
     //You can also set default or initial state here.
@@ -34,6 +35,8 @@ export const store = new Vuex.Store({
                 commit('setCarList', { list: response.data })
             });
         },
+
+
 
     },
     //Actions are where you define the calls that will commit
