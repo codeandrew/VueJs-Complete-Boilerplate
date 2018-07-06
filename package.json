@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "firebase": "^5.2.0",
+    "jquery": "^1.9.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -25,7 +26,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "bootstrap": "^4.0.0-beta.2",
-    "bootstrap-vue": "^1.0.2",
+    "bootstrap-vue": "^1.5.1",
     "chalk": "^2.0.1",
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
