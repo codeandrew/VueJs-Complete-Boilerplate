@@ -58,20 +58,21 @@ export default {
       display : block;
     }
 
+    p {
+      margin-top: 40px;
+      font-size : 13px;
+      a {
+        text-decoration : underline;
+        cursor : pointer;
+      }
+    }
   }
   button {
     margin-top : 20px;
     width: 150px;
     cursor: pointer;
   }
-  p {
-    margin-top: 40px;
-    font-size : 13px;
-    a {
-      text-decoration : underline;
-      cursor : pointer;
-    }
-  }
+
 
 
 
