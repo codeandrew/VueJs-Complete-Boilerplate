@@ -8,7 +8,11 @@
     <b-button variant="success" name="button">
       Sign In
     </b-button>
-    <p>You don't have account ? You can create one</p>
+    <p>You don't have account ?
+      <router-link to="/sign-up">
+        You can create one
+      </router-link>
+     </p>
 
   </div>
 </template>
