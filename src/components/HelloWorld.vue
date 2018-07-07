@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h2>{{ msg }}</h2>
+    <h2> {{ auth }}</h2>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -21,12 +22,37 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
-  name: 'HelloWorld',
+  name: 'Hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      auth : "Auth " ,
+
+      // user : firebase.auth()
     }
+  },
+
+  mounted(){
+    let user = firebase.auth().currentUser;
+    let name, email, photoUrl, uid, emailVerified;
+
+    if (user != null) {
+      const owner = {
+        name : user.displayName,
+        email : user.email,
+        photoUrl : user.photoURL,
+        emailVerified : user.emailVerified,
+        uid : user.uid
+      }
+      // The user's ID, unique to the Firebase project. Do NOT use
+      // this value to authenticate with your backend server, if
+      // you have one. Use User.getToken() instead.
+      console.log( 'Owner: ', owner )
+    }
+    console.log( 'firebase', user )
   }
 }
 </script>
@@ -35,6 +61,8 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
 }
 
 ul {
