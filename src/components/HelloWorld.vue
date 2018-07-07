@@ -2,6 +2,7 @@
   <div class="hello">
     <h2>{{ msg }}</h2>
     <h2> {{ auth }}</h2>
+    <p> {{user }}</p>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -23,8 +24,10 @@
 
 <script>
 import firebase from 'firebase'
+import { mapState, mapActions } from 'vuex'
 
 export default {
+
   name: 'Hello',
   data () {
     return {
@@ -37,22 +40,37 @@ export default {
 
   mounted(){
     let user = firebase.auth().currentUser;
-    let name, email, photoUrl, uid, emailVerified;
-
+    // let name, email, photoUrl, uid, emailVerified;
+    //
     if (user != null) {
-      const owner = {
-        name : user.displayName,
-        email : user.email,
-        photoUrl : user.photoURL,
-        emailVerified : user.emailVerified,
-        uid : user.uid
-      }
-      // The user's ID, unique to the Firebase project. Do NOT use
-      // this value to authenticate with your backend server, if
-      // you have one. Use User.getToken() instead.
-      console.log( 'Owner: ', owner )
-    }
-    console.log( 'firebase', user )
+    //   const owner = {
+    //     name : user.displayName,
+    //     email : user.email,
+    //     photoUrl : user.photoURL,
+    //     emailVerified : user.emailVerified,
+    //     uid : user.uid
+    //   }
+    //   // The user's ID, unique to the Firebase project. Do NOT use
+    //   // this value to authenticate with your backend server, if
+    //   // you have one. Use User.getToken() instead.
+    //   console.log( 'Owner: ', owner )
+    // }
+    // console.log( 'firebase', user )
+    this.getFirebaseUser(user)
+  }
+  },
+  computed : {
+    ...mapState([
+      'user'
+    ])
+
+
+  },
+
+  methods : {
+    ...mapActions([
+      'getFirebaseUser'
+    ])
   }
 }
 </script>
