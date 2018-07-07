@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="sign-up">
     <p> {{ subheader }}</p>
-    <input type="text" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <b-button  variant="success">
+    <input type="text" v-model="email" placeholder="Email">
+    <input type="password" v-model="password" placeholder="Password">
+    <b-button @click="signUp" variant="success">
       Sign Up
     </b-button>
     <span> or go back to
@@ -15,10 +15,26 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+
 export default {
+  name : 'signUp',
   data(){
     return {
-      subheader : "Let's Create a new account !"
+      subheader : "Let's Create a new account !",
+      email : '',
+      password : ''
+    }
+  },
+
+  methods : {
+    signUp(){
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+      .then( user => {
+        alert('Account has been created !')
+      }, ( err ) => {
+        alert('Oops! ' + err.message )
+      })
     }
   }
 }
