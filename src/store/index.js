@@ -19,7 +19,8 @@ let baseData = {
 export const store = new Vuex.Store({
     state : {
       dependencies : { ...baseData.dependencies } ,
-      routes : { ...router.options.routes }
+      routes : { ...router.options.routes },
+      user : {}
     },
     //This is where you define the data structure of your application.
     //You can also set default or initial state here.
@@ -36,7 +37,19 @@ export const store = new Vuex.Store({
             });
         },
 
+        getFirebaseUser : ( {commit, state}, payload) => {
+            console.log("getFirebaseUser: ",payload);
 
+            const user  = {
+              name : payload.displayName,
+              email : payload.email,
+              photoUrl : payload.photoURL,
+              emailVerified : payload.emailVerified,
+              uid : payload.uid
+            }
+
+            commit('setFirebaseUser', user);
+        }
 
     },
     //Actions are where you define the calls that will commit
@@ -56,6 +69,9 @@ export const store = new Vuex.Store({
             });
             const brand = Object.keys( state.carList );
             state.brandList = Object.keys( groupBy(state.carList, 'brand' ) );
+        },
+        setFirebaseUser : (state, list) => {
+            state.user = list;
         }
 
     },
