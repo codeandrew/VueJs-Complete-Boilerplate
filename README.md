@@ -2,6 +2,11 @@
 
 > A Vue.js template
 
+## Functionalities
+- With Firebase authentication
+  - Login
+  - SignUp
+
 ### Dependencies
 - Vue Router
 - Sass
