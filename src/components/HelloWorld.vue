@@ -35,32 +35,16 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      auth : "Auth " ,
-
-      // user : firebase.auth()
+      auth : "Auth "
     }
   },
 
   mounted(){
-    let user = firebase.auth().currentUser;
-    // let name, email, photoUrl, uid, emailVerified;
-    //
+    let user = firebase.auth().currentUser
+
     if (user != null) {
-    //   const owner = {
-    //     name : user.displayName,
-    //     email : user.email,
-    //     photoUrl : user.photoURL,
-    //     emailVerified : user.emailVerified,
-    //     uid : user.uid
-    //   }
-    //   // The user's ID, unique to the Firebase project. Do NOT use
-    //   // this value to authenticate with your backend server, if
-    //   // you have one. Use User.getToken() instead.
-    //   console.log( 'Owner: ', owner )
-    // }
-    // console.log( 'firebase', user )
-    this.getFirebaseUser(user)
-  }
+      this.getFirebaseUser(user)
+    }
   },
   computed : {
     ...mapState([
