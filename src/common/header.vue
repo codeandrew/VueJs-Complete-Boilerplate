@@ -2,7 +2,9 @@
   <div class="nav-header">
     <b-container>
       <div class="navbrand">
-        <h2>NavBrand </h2>
+        <!-- <h2 v-if="userChecker"> {{ user.email }} </h2>
+        <h2 v-else> Vue Template </h2> -->
+        <h2> {{ this.userChecker() }}</h2>
       </div>
 
       <div>
@@ -21,6 +23,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import firebase from 'firebase'
 
 export default {
   data(){
@@ -29,12 +32,29 @@ export default {
 
   computed : {
     ...mapState([
-      'routes'
+      'routes',
+      'user'
     ])
   },
 
   mounted(){
-    console.log(this.routes)
+    setTimeout(
+      console.log("userChecker : ", this.userChecker)
+      , 2500
+    )
+  },
+  methods : {
+    userChecker(){
+      let user = firebase.auth().currentUser
+      console.log( 'checker : ',  user )
+      return user != null
+        ? user.email
+        : "Vue Template"
+
+      // if ( user != null ){
+      //   return true
+      // } else
+    }
   }
 }
 </script>
