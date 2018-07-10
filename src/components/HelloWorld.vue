@@ -20,7 +20,7 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
     <div class="">
-      <b-button @click="logout" name="button"> Sign Out</b-button>
+      <b-button @click="logOut" name="button"> Sign Out</b-button>
     </div>
   </div>
 </template>
@@ -56,14 +56,10 @@ export default {
 
   methods : {
     ...mapActions([
-      'getFirebaseUser'
+      'getFirebaseUser',
+      'logOut'
     ]),
 
-    logout(){
-      firebase.auth().signOut().then( () => {
-        this.$router.replace('login')
-      })
-    }
   }
 }
 </script>
