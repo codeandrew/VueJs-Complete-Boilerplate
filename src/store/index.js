@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import firebase from 'firebase'
 import router from '../router'
 
 Vue.use(Vuex);
@@ -37,8 +38,17 @@ export const store = new Vuex.Store({
             });
         },
 
+        logOut: ( { commit }) => {
+          firebase.auth().signOut().then( () => {
+            alert('Logged out')
+            router.push('login')
+          })
+
+          commit('clearUser', {})
+        },
+
         getFirebaseUser : ( {commit, state}, payload) => {
-            console.log("getFirebaseUser: ",payload);
+            console.log("getFirebaseUser: ", payload);
 
             const user  = {
               name : payload.displayName,
@@ -71,6 +81,10 @@ export const store = new Vuex.Store({
             state.brandList = Object.keys( groupBy(state.carList, 'brand' ) );
         },
         setFirebaseUser : (state, list) => {
+            state.user = list;
+        },
+
+        clearUser : (state, list) => {
             state.user = list;
         }
 
