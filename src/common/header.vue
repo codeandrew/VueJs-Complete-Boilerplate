@@ -1,10 +1,10 @@
 <template lang="html">
   <div class="nav-header">
     <b-container>
-      <div class="navbrand">
+      <div class="nav navbrand">
         <!-- <h2 v-if="userChecker"> {{ user.email }} </h2>
         <h2 v-else> Vue Template </h2> -->
-        <h2> {{ this.userChecker() }}</h2>
+        <h4> {{ this.userChecker() }}</h4>
       </div>
 
       <div>
@@ -37,18 +37,11 @@ export default {
     ])
   },
 
-  mounted(){
-    setTimeout(
-      console.log("userChecker : ", this.userChecker)
-      , 2500
-    )
-  },
   methods : {
     userChecker(){
-      let user = firebase.auth().currentUser
-      console.log( 'checker : ',  user )
-      return user != null
-        ? user.email
+      console.log('userChecker : ', this.user)
+      return this.user.email != null
+        ? this.user.email
         : "Vue Template"
 
       // if ( user != null ){
@@ -60,4 +53,7 @@ export default {
 </script>
 
 <style lang="css">
+.navbrand {
+  margin-top : 10px;
+}
 </style>
