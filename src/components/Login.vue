@@ -37,6 +37,7 @@ export default {
         user => {
           alert('Well done! ' + user.user.email + ' You are now Connected')
           console.log(user)
+          this.$router.replace('hello')
         },
         err => {
           alert('Oops! ' + err.message )
