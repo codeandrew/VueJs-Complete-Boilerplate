@@ -71,10 +71,6 @@ export default {
       return this.user.email != null
         ? this.user.email
         : "Vue Template"
-
-      // if ( user != null ){
-      //   return true
-      // } else
     }
   }
 }
