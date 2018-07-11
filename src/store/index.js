@@ -20,7 +20,7 @@ let baseData = {
 export const store = new Vuex.Store({
     state : {
       dependencies : { ...baseData.dependencies } ,
-      routes : { ...router.options.routes },
+      routes : [ ...router.options.routes ],
       user : {}
     },
     //This is where you define the data structure of your application.
