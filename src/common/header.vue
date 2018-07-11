@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import firebase from 'firebase'
 
 export default {
@@ -34,6 +34,11 @@ export default {
     ...mapState([
       'routes',
       'user'
+    ]),
+
+    ...mapGetters([
+      'authRoutes',
+      'publicRoutes'
     ])
   },
 
