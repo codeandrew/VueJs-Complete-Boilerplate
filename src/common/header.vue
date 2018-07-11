@@ -81,8 +81,13 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 .navbrand {
-  margin-top : 10px;
+  h4 {
+    margin-top : 10px;
+  }
+}
+.logout {
+  margin-top : 0;
 }
 </style>
