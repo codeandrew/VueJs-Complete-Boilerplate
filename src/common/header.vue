@@ -65,6 +65,11 @@ export default {
     ])
   },
 
+  beforeMount(){
+    console.log( 'authRoutes', this.authRoutes )
+    console.log( 'publicRoutes', this.publicRoutes )
+  },
+
   methods : {
     userChecker(){
       console.log('userChecker : ', this.user)
