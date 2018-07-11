@@ -92,6 +92,11 @@ export const store = new Vuex.Store({
     //The mutations calls are the only place that the store can be updated.
 
     getters : {
+      authRoutes : state => {
+        const list = state.routes.filter( x => x.meta.requiresAuth == true )
+        return list
+      },
+
     },
     //Getters are a way to grab computed data from the store. For example,
     // if you have a project list, one component might only want to show projects
