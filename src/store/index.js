@@ -97,6 +97,11 @@ export const store = new Vuex.Store({
         return list
       },
 
+      publicRoutes : state => {
+        const list = state.routes.filter( x => x.meta.requiresAuth == false )
+        return list
+      }
+
     },
     //Getters are a way to grab computed data from the store. For example,
     // if you have a project list, one component might only want to show projects
