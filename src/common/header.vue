@@ -9,11 +9,34 @@
 
       <div>
         <ul class="navbar-nav">
-          <router-link v-for="item in routes"
-          tag='li' key='item.name' class="nav-link"
-          :to="item.path">
+          <router-link
+          v-for="item in publicRoutes"
+          tag='li'
+          key='item.name'
+          class="nav-link"
+          :to="item.path"
+          v-if="!user.email" >
             <a > {{ item.name }}</a>
           </router-link>
+
+          <router-link
+          v-for="item in authRoutes"
+          tag='li'
+          key='item.name'
+          class="nav-link"
+          :to="item.path"
+          v-if="user.email" >
+            <a > {{ item.name }}</a>
+          </router-link>
+
+          <b-button
+           variant="outline-success"
+           size="sm"
+           class='logout'
+           v-if="user.email" >
+           Sign Out
+         </b-button>
+
         </ul>
       </div>
     </b-container>
