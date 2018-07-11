@@ -17,7 +17,17 @@ const router =  new Router({
     {
       path: '/',
       name : 'Home',
-      component : Home
+      component : Home,
+      meta : {
+        requiresAuth: false,
+        title : "Vue Template",
+        metaTags: [
+          {
+            name: 'Vue Template',
+            content: 'Content of Vue Template'
+          }
+        ]
+      }
     },
     // {
     //   path: '/about',
@@ -32,16 +42,51 @@ const router =  new Router({
     {
       path: '/login',
       name : 'Login',
-      component : Login
+      component : Login,
+      meta : {
+        requiresAuth: false,
+        title : "Login",
+        metaTags: [
+          {
+            name: 'Login',
+            content: 'Login'
+          }
+        ]
+      }
     },
     {
       path: '/sign-up',
       name : 'SignUp',
-      component : SignUp
+      component : SignUp,
+      meta : {
+        requiresAuth: false,
+        title : "SignUp",
+        metaTags: [
+          {
+            name: 'SignUp',
+            content: 'SignUp Users in Firebase'
+          }
+        ]
+      }
     },
     {
       path: '/hello',
       name : 'Hello',
+      component : Hello,
+      meta : {
+        requiresAuth: true,
+        title : "Hello",
+        metaTags: [
+          {
+            name: 'Hello',
+            content: 'Hello User'
+          }
+        ]
+      }
+    },
+    {
+      path: '/to-do',
+      name : 'Todo',
       component : Hello,
       meta : {
         requiresAuth: true
