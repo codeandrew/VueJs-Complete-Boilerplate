@@ -20,7 +20,7 @@
           <router-link
           v-for="( item, key )  in authRoutes"
           tag='li'
-          key='key'
+          key='item.name'
           class="nav-link"
           :to="item.path"
           v-if="user.email" >
