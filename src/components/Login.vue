@@ -20,6 +20,7 @@
 
 <script>
 import firebase from 'firebase'
+import { mapActions } from 'vuex'
 
 export default {
   name : 'login',
@@ -31,12 +32,17 @@ export default {
   },
 
   methods: {
+    ...mapActions([
+      'getFirebaseUser',
+    ]),
+
     signIn(){
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       .then(
         user => {
           alert('Well done! ' + user.user.email + ' You are now Connected')
-          console.log(user)
+          console.log('Login UserInfo: ', user )
+          this.getFirebaseUser( user.user )
           this.$router.replace('hello')
         },
         err => {
