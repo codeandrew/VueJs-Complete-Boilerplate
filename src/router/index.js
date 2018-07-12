@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/HelloWorld'
+import Hello from '../components/HelloWorld'
+import Todo from '../components/Todo'
 import Home from '../pages/home'
 import About from '../pages/about'
 import Example from '../pages/example'
@@ -91,7 +92,7 @@ const router =  new Router({
     {
       path: '/to-do',
       name : 'Todo',
-      component : Hello,
+      component : Todo,
       meta : {
         requiresAuth: true
       }
