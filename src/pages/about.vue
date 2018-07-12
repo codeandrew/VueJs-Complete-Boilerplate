@@ -31,7 +31,7 @@ export default {
   },
 
   mounted(){
-    console.log( this.dependencies )
+    console.log("About dependencies: ",  this.dependencies )
   }
 }
 </script>
