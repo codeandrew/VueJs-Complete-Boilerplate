@@ -40,11 +40,12 @@ export default {
   },
 
   mounted(){
-    let user = firebase.auth().currentUser
+    const userValues = Object.values(this.user)
 
-    if (user != null) {
-      this.getFirebaseUser(user)
-    }
+    console.log('userValues', userValues )
+    // const list = this.user.map( x => x.userKeys[x] )
+    // console.log( 'list', list )
+
   },
   computed : {
     ...mapState([
@@ -56,7 +57,6 @@ export default {
 
   methods : {
     ...mapActions([
-      'getFirebaseUser',
       'logOut'
     ]),
 
