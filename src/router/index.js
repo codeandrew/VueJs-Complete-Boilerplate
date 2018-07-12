@@ -29,11 +29,15 @@ const router =  new Router({
         ]
       }
     },
-    // {
-    //   path: '/about',
-    //   name : 'About',
-    //   component : About
-    // },
+    {
+      path: '/about',
+      name : 'About',
+      component : About,
+      meta : {
+        requiresAuth: false
+      }
+
+    },
     // {
     //   path: '/example',
     //   name : 'Example',
