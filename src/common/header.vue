@@ -2,8 +2,6 @@
   <div class="nav-header">
     <b-container>
       <div class="nav navbrand">
-        <!-- <h2 v-if="userChecker"> {{ user.email }} </h2>
-        <h2 v-else> Vue Template </h2> -->
         <h4> {{ this.userChecker() }}</h4>
       </div>
 
@@ -33,6 +31,7 @@
            variant="outline-success"
            size="sm"
            class='logout'
+           @click="logOut"
            v-if="user.email" >
            Sign Out
          </b-button>
@@ -45,7 +44,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex'
 import firebase from 'firebase'
 
 export default {
@@ -65,12 +64,11 @@ export default {
     ])
   },
 
-  beforeMount(){
-    console.log( 'authRoutes', this.authRoutes )
-    console.log( 'publicRoutes', this.publicRoutes )
-  },
-
   methods : {
+    ...mapActions([
+      'logOut'
+    ]),
+
     userChecker(){
       console.log('userChecker : ', this.user)
       return this.user.email != null
