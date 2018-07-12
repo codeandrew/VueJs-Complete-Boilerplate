@@ -8,9 +8,9 @@
       <div>
         <ul class="navbar-nav">
           <router-link
-          v-for="item in publicRoutes"
+          v-for="( item, key )  in publicRoutes"
           tag='li'
-          key='item.name'
+          key='key'
           class="nav-link"
           :to="item.path"
           v-if="!user.email" >
@@ -18,9 +18,9 @@
           </router-link>
 
           <router-link
-          v-for="item in authRoutes"
+          v-for="( item, key )  in authRoutes"
           tag='li'
-          key='item.name'
+          key='key'
           class="nav-link"
           :to="item.path"
           v-if="user.email" >
