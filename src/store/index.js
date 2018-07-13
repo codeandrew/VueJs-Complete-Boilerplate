@@ -59,6 +59,20 @@ export const store = new Vuex.Store({
             }
 
             commit('setFirebaseUser', user);
+        },
+
+        getTodo : ( { commit } ) => {
+          const app = firebase.app()
+          const db = firebase.firestore()
+
+          const todo = db.collection('users').doc('to_do')
+
+          todo.get()
+          .then( doc => {
+            const data = doc.data()
+            console.log("getTodo: ",  data)
+            commit('setTodo', data.items)
+          })
         }
 
     },
