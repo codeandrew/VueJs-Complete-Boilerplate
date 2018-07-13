@@ -5,7 +5,30 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+import { mapState, mapActions } from 'vuex'
+
 export default {
+
+  computed : {
+    ...mapState([
+      'todo'
+    ]),
+
+  },
+
+  methods : {
+    ...mapActions([
+      'getTodo'
+    ])
+
+  },
+
+  beforeMount() {
+    //do something before mounting vue instance
+    this.getTodo()
+  }
+
 }
 </script>
 
