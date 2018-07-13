@@ -80,7 +80,12 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+.to-do{
+  h2 {
+    text-align: center;
+  }
 
+}
 
 </style>
