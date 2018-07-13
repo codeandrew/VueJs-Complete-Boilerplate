@@ -65,6 +65,10 @@ export default {
     ...mapActions([
       'getTodo'
     ])
+    submit(evt){
+      evt.preventDefault()
+      console.log('submit', this.form )
+    }
 
   },
 
