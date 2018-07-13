@@ -1,6 +1,9 @@
 <template lang="html">
   <div class="to-do">
     <h2> To Do </h2>
+    <b-container>
+      <b-table striped hover :items="todo"></b-table>
+    </b-container>
   </div>
 </template>
 
