@@ -74,7 +74,15 @@ export const store = new Vuex.Store({
             console.log("getTodo: ",  data)
             commit('setTodo', data.items)
           })
-        }
+        },
+
+        addTodo : ( { commit }, payload ) => {
+          const app = firebase.app()
+          const db = firebase.firestore()
+
+          db.collection('users').doc('to_do')
+          .set(payload);
+        },
 
     },
     //Actions are where you define the calls that will commit
