@@ -21,7 +21,8 @@ export const store = new Vuex.Store({
     state : {
       dependencies : { ...baseData.dependencies } ,
       routes : [ ...router.options.routes ],
-      user : {}
+      user : {},
+      todo : []
     },
     //This is where you define the data structure of your application.
     //You can also set default or initial state here.
@@ -100,6 +101,10 @@ export const store = new Vuex.Store({
 
         clearUser : (state, list) => {
             state.user = list;
+        },
+
+        setTodo : ( state, list ) => {
+          state.todo = list
         }
 
     },
