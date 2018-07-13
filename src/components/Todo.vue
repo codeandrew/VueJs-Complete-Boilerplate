@@ -48,6 +48,11 @@ import firebase from 'firebase'
 import { mapState, mapActions } from 'vuex'
 
 export default {
+  data(){
+    return {
+      form : { }
+    }
+  },
 
   computed : {
     ...mapState([
