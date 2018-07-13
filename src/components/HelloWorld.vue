@@ -24,12 +24,6 @@ export default {
   },
 
   mounted(){
-    const userValues = Object.values(this.user)
-
-    console.log('userValues', userValues )
-    // const list = this.user.map( x => x.userKeys[x] )
-    // console.log( 'list', list )
-
   },
   computed : {
     ...mapState([
