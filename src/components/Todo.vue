@@ -38,7 +38,11 @@
           </b-form>
       </div>
 
-      <b-table striped hover :items="todo"></b-table>
+      <b-table
+      striped
+      hover
+      v-if="todo"
+      :items="todo"/>
     </b-container>
   </div>
 </template>
