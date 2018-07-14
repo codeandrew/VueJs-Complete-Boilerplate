@@ -65,15 +65,17 @@ export const store = new Vuex.Store({
         getTodo : ( { commit } ) => {
           const app = firebase.app()
           const db = firebase.firestore()
+          let todoList = []
 
-          const todo = db.collection('users').doc('to_do')
-
-          todo.get()
-          .then( doc => {
-            const data = doc.data()
-            console.log("getTodo: ",  data)
-            commit('setTodo', data.items)
+          const todo = db.collection('todo')
+          .get()
+          .then(querySnapshot => {
+              querySnapshot.forEach( doc  => {
+                  console.log( doc.id, " => ", doc.data() )
+                  todoList.push( doc.data() )
+              })
           })
+          commit('setTodo', todoList)
         },
 
         addTodo : ( { commit }, payload ) => {
