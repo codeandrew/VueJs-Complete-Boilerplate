@@ -6,6 +6,9 @@
 - With Firebase authentication
   - Login
   - SignUp
+- Firebase Crud
+  - Create To Do list
+  - Query To do List
 
 ### Dependencies
 - Vue Router
