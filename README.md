@@ -1,6 +1,7 @@
-# codeandrew-github
+# VueJS Boiler Template
 
-> A Vue.js template
+> This is a boiler Template of VueJs to reduce time in setting up and more on actual coding.
+> With patterns of functionalities to replicate
 
 ## Functionalities
 - With Firebase authentication
@@ -37,3 +38,5 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+### codeandrew.github.io 2018
