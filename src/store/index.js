@@ -80,8 +80,14 @@ export const store = new Vuex.Store({
           const app = firebase.app()
           const db = firebase.firestore()
 
-          db.collection('users').doc('to_do')
-          .set(payload);
+          db.collection('todo')
+          .add( payload )
+          .then( docRef => {
+            alert("Document Written with ID: ", docRef.id )
+          }).catch( err => {
+            alert("Error adding Document: ", err )
+          })
+
         },
 
     },
