@@ -24,6 +24,8 @@ export default {
   },
 
   mounted(){
+    console.log('root api', process.env.ROOT_API)
+    // console.log('firebase config : ', process.env.FIREBASE)
   },
   computed : {
     ...mapState([
