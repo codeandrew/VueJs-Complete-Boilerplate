@@ -26,14 +26,7 @@ Vue.component('foot-component', footer )
 Vue.component('info-col', infoCol )
 Vue.component('infoSection', infoSection )
 
-const config = {
-  apiKey: "AIzaSyB8PthQVcXILdk398_PcpBb6lOJ18obofE",
-  authDomain: "to-do-app-876b4.firebaseapp.com",
-  databaseURL: "https://to-do-app-876b4.firebaseio.com",
-  projectId: "to-do-app-876b4",
-  storageBucket: "to-do-app-876b4.appspot.com",
-  messagingSenderId: "600361348663"
-};
+const config = process.env.FIREBASE;
 
 firebase.initializeApp(config);
 
