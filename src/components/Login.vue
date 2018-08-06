@@ -55,32 +55,4 @@ export default {
 </script>
 
 <style lang="scss">
-  .login {
-    margin-top : 40px;
-
-    input {
-      margin : 10px auto;
-      width : 300px;
-      padding : 15px;
-      display : block;
-    }
-
-    p {
-      margin-top: 40px;
-      font-size : 13px;
-      a {
-        text-decoration : underline;
-        cursor : pointer;
-      }
-    }
-  }
-  button {
-    margin-top : 20px;
-    width: 150px;
-    cursor: pointer;
-  }
-
-
-
-
 </style>
