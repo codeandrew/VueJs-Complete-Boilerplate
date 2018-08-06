@@ -1,9 +1,8 @@
   .nav-header{
     height : rule(7);
-    line-height : 57px;
     .navbrand {
       float : left;
-      margin-top : rule(1);
+      // margin-top : rule(1);
     }
     //background-color : #f8f8f8;
   }
@@ -15,5 +14,6 @@
    .nav-link {
      display: inline-block;
      margin-right: rule(1);
+     padding: rule(2) 0;
    }
  }
