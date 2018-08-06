@@ -44,28 +44,4 @@ export default {
 
 <style lang="scss">
 
-.sign-up {
-  margin-top : 40px;
-
-  input {
-    margin : 10px auto;
-    width : 300px;
-    padding : 15px;
-    display : block;
-  }
-
-  button {
-    margin-top : 10px;
-    width: 150px;
-    cursor: pointer;
-  }
-}
-
-span {
-  display : block;
-  margin-top : 20px;
-  font-size : 11px;
-}
-
-
 </style>
