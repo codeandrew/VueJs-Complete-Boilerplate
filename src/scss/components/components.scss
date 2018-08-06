@@ -1,5 +1,5 @@
 .article {
-  padding: 40px 0;
+  padding: rule(5) 0;
 
   ul {
     text-align: center;
@@ -7,16 +7,16 @@
 }
 
 .section-pad-xl{
-  padding: 80px 0;
+  padding: rule(10) 0;
 }
 .section-pad-lg {
- padding : 60px 0;
+ padding : rule(8) 0;
 }
 .section-pad-md {
- padding : 40px 0;
+ padding : rule(5) 0;
 }
 .section-pad-sm {
- padding : 20px 0;
+ padding : rule(4) 0;
 }
 .center {
   text-align: center;
