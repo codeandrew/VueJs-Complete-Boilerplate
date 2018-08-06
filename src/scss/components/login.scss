@@ -1,0 +1,24 @@
+.login {
+  margin-top : rule(7);
+
+  input {
+    margin : rule(1) auto;
+    width : rule(38);
+    padding : rule(1) rule(2);
+    display : block;
+  }
+
+  p {
+    margin-top: rule(4);
+    font-size : rule(2);
+    a {
+      text-decoration : underline;
+      cursor : pointer;
+    }
+  }
+}
+button {
+  margin-top : rule(4);
+  width: rule(18);
+  cursor: pointer;
+}
