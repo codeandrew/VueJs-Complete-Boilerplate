@@ -2,6 +2,7 @@
   <div class="sign-up">
     <p> {{ subheader }}</p>
     <img src="../assets/logo.png">
+    <h3> Sign Up</h3>
     <input type="text" v-model="email" placeholder="Email">
     <input type="password" v-model="password" placeholder="Password">
     <b-button @click="signUp" variant="success">
