@@ -7,6 +7,7 @@
     <b-button @click="signUp" variant="success">
       Sign Up
     </b-button>
+    <br>
     <span> or go back to
       <router-link to="/login">
         login
