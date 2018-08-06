@@ -9,3 +9,10 @@ $ubuntu: 'Ubuntu', sans-serif;
 
 $dirty-white : #f8f8f8;
 $gray : #eee;
+
+//functions
+$pt : 8px;
+
+@function rule($num) {
+  @return calc( #{ $pt } * #{ $num })
+}
