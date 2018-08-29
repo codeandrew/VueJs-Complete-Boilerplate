@@ -11,6 +11,16 @@
   @include center-flex;
 }
 
+@mixin font( $size, $weight: 300, $color : $primary-font-color, $line-height : calc($size * 1.5 ) ){
+  font : {
+    size : $size;
+    weight : $weight;
+  }
+  color : $color;
+  line-height: $line-height;
+}
+
+
 
 $breakpoints: (
     "phone":        400px,
