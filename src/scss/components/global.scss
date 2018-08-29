@@ -1,29 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
 
-html, body {
-  height: 100%;
-  width: 100%;
-  background-color: $gray;
-}
 
-* {
-  transition: .7s;
-  margin : 0;
-  padding : 0;
-}
-
-#app {
- font-family: 'Avenir', Helvetica, Arial, sans-serif;
- -webkit-font-smoothing: antialiased;
- -moz-osx-font-smoothing: grayscale;
- text-align: center;
- color: #2c3e50;
-}
 @mixin center-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .container {
   @include center-flex;
 }
@@ -50,4 +33,25 @@ $breakpoints: (
             @content;
         }
     }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: $gray;
+  @include font(rule(2));
+}
+
+* {
+  transition: .7s;
+  margin : 0;
+  padding : 0;
+}
+
+#app {
+ font-family: 'Avenir', Helvetica, Arial, sans-serif;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ text-align: center;
+ color: #2c3e50;
 }
